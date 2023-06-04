@@ -24,16 +24,13 @@ func main() {
 	if root[len(root)-1] != '/' {
 		root += "/"
 	}
-	fmt.Println("root ==", root)
 
 	repoNames := strings.Split(os.Getenv("MG_REPOS"), ",")
-	fmt.Println("repoName ==", repoNames)
 
 	repoManager, err := repo_manager.NewRepoManager(root, repoNames, *ignoreErrors)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("repoManager ==", repoManager)
 
 	output, _ := repoManager.Exec(*command)
 	for repo, out := range output {
@@ -41,5 +38,5 @@ func main() {
 		fmt.Println(out)
 	}
 
-	fmt.Println("Done..........")
+	fmt.Println("Done")
 }

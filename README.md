@@ -6,7 +6,7 @@ Example CLI project written in Go.
 
 Download and install Docker.
 
-### Build the container image
+### Build
 
 <details>
 <summary>Expand</summary>
